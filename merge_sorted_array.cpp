@@ -24,7 +24,10 @@ int* merged = mergeSortedArray(a, 4, b, 6);
 
 int* mergeSortedArray(int* array1, int numElements1, int* array2, int numElements2){
 
-    int newArray[(numElements1 + numElements2)];
+    // int newArray[(numElements1 + numElements2)];
+    int* newArray = (int *) calloc((numElements1 + numElements2), sizeof(int));
+
+
     int j = 0;
     int k = 0;
 
@@ -71,5 +74,7 @@ int main(void){
     {
         printf("%d ", merged[i]);
     }
+
+    free(merged);
     return 0;
 }
